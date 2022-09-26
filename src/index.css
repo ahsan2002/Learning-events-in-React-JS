@@ -1,0 +1,26 @@
+*{
+  padding:0 ;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div{
+  width: 100%;
+  height: 100vh;
+  background-color: plum;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  padding: 12px 20px;
+  background-color: #3075c4;
+  color: black;
+  border: 2px solid #ecf0f1;
+  outline: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 25px;
+}
