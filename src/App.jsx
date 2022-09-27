@@ -87,45 +87,53 @@ const App = () => {
     const inputevent = (event) => {
     // console.log(event.target.value)
 
-    const value=event.target.value;
-    const name=event.target.name;
-    setfullName((preValue)=>{
-        // console.log(preValue);
-        if(name === 'fName'){
-            return{
-            fName: value,
-            lName: preValue.lName,
-            email:preValue.email,
-            phone:preValue.phone,
-            }
-        }
-        else if(name === 'lName'){
-            return{
-            fName: preValue.fName,
-            lName:value ,
-            email:preValue.email,
-            phone:preValue.phone,
-            }
-        }
-        else if(name === 'myemail'){
-            return{
-            fName: preValue.fName,
-            lName:preValue.lName ,
-            email:value,
-            phone:preValue.phone,
-            }
-        }
-        else if(name === 'mynum'){
-            return{
-            fName: preValue.fName,
-            lName:preValue.lName ,
-            email:preValue.email,
-            phone:value,
-            }
-        }
-    })
+    // const value=event.target.value;
+    // const name=event.target.name;
 
-  };
+    const{name,value}=event.target;
+
+    setfullName(
+       (preValue)=>{
+    //     // console.log(preValue);
+    //     if(name === 'fName'){
+    //         return{
+    //         fName: value,
+    //         lName: preValue.lName,
+    //         email:preValue.email,
+    //         phone:preValue.phone,
+    //         }
+    //     }
+    //     else if(name === 'lName'){
+    //         return{
+    //         fName: preValue.fName,
+    //         lName:value ,
+    //         email:preValue.email,
+    //         phone:preValue.phone,
+    //         }
+    //     }
+    //     else if(name === 'myemail'){
+    //         return{
+    //         fName: preValue.fName,
+    //         lName:preValue.lName ,
+    //         email:value,
+    //         phone:preValue.phone,
+    //         }
+    //     }
+    //     else if(name === 'mynum'){
+    //         return{
+    //         fName: preValue.fName,
+    //         lName:preValue.lName ,
+    //         email:preValue.email,
+    //         phone:value,
+    //         }
+    //     }
+    // })
+    return{
+      ...preValue,
+      [name]:value,
+    }
+
+})};
 
   const submitData = (event) => {
     event.preventDefault();
@@ -159,7 +167,7 @@ const App = () => {
           <input
             type="email"
             placeholder="Enter Your Email Address"
-            name="myemail"
+            name="email"
             onChange={inputevent}
             // value={fullName.lName}
           />
@@ -167,7 +175,7 @@ const App = () => {
           <input
             type="number"
             placeholder="Enter Your Mobile Number"
-            name="mynum"
+            name="phone"
             onChange={inputevent}
             // value={fullName.lName}
           />
